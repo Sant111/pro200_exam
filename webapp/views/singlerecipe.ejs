@@ -1,0 +1,119 @@
+<% layout("layout") -%>
+<nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="/">Hjem</a>
+			</li>
+			<li class="breadcrumb-item" aria-current="page">
+				<a href="/week-planner-current">Planleggeren</a>
+			</li>
+			<li  class="breadcrumb-item active" aria-current="page">
+				<a id="lol123" href="/searchTabs">Oppskriftssøk</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">
+					<a href="">Oppskrift</a>
+				</li>
+		</ol>
+	</nav>
+
+	<% if (data.id){ %>
+
+		<section id="recipe-header" style="background-image: url(<%= data.feature_image_url %>)">
+			<div class="gradient"></div>
+			<% for (i in data.concept_icons) { %>
+				<div class="concept-icon" title="">
+					<img class="png" src="<%= data.concept_icons[i].image_url %>" alt="<%= data.concept_icons[i].name %>">
+					<h1 class="concept-text">
+						<%= data.concept_icons[i].name %>
+					</h1>|
+				</div>
+				<% } %>
+					<div class="recipe-header-title">
+						<h1>
+							<%= data.title %>
+						</h1>
+						<h6>
+							<%= data.provider_name %>
+						</h6>
+					</div>
+					<div id="add-section-top">
+						<div id="add-text-wrapper">
+							<h1>kr
+								<%= data.portion_price %>
+							</h1>
+							<p>per posjon</p>
+							<form action="/database/recipe-in-day/" method="GET">
+								<input class="single-recipe-id" type="hidden" name="recipeid" value="<%= data.id %>">
+								<input class="single-recipe-dayid" type="hidden" name="dayid" value="">
+								<input class="single-recipe-add button add-recipe" type="submit" value="Legg til i planlegger">
+							</form>
+						</div>
+					</div>
+		</section>
+		<main class="recipe-section">
+			<header class="mini-header">
+				<h5 id="recipe-duration">
+					Tidsforbruk: ca <%= data.cooking_duration_string %>
+				</h5>
+				<h5 id="recipe-difficulty">
+					Vanskelighetsgrad: <%= data.difficulty_string %>
+				</h5>
+			</header>
+			<article class="recipe-text">
+				<%- data.instructions_html %>
+			</article>
+			<aside class="recipe-ingredients">
+				<%- data.ingredient_list_html %>
+			</aside>
+			<aside class="recipe-shopping-list">
+				<% for (i in data.ingredients) { %>
+					<% if(data.ingredients[i].is_basic === false)	{ %>
+						<div class="ingredient-wrapper">
+							<img class="cart-image" src="<%= data.ingredients[i].product.images[0].thumbnail.url %>" alt="">
+							<div class="cart-text-wrapper">
+								<p class="ingredient-title">
+									<%= data.ingredients[i].product.name + " " + data.ingredients[i].product.name_extra %>
+								</p>
+							</div>
+							<div class="price-wrapper">
+								<p class="item-price">
+									<%= data.ingredients[i].product.gross_price %>
+								</p>
+							</div>
+						</div>
+					<% } %>
+					<% } %>
+					<div class="shopping-list-summary">
+						<%
+							let priceTotal = 0;
+							priceSummary = function() {
+								for (i in data.ingredients)	{
+									 if (data.ingredients[i].is_basic === false)	{
+									let convertToInt = parseFloat(data.ingredients[i].product.gross_price);
+									priceTotal = priceTotal + convertToInt;
+									 }
+								}
+								let priceTotalOutput = priceTotal.toFixed(2);
+								return priceTotalOutput;
+							}
+						%>
+						<h5>Varer for:</h5>
+						<div>
+							<h2><%= priceSummary() %>,-</h2>
+							<p>Nok til <%= data.default_num_portions %> personer</p>
+						</div>
+						<form action="/database/recipe-in-day/" method="GET">
+							<input class="single-recipe-id" type="hidden" name="recipeid" value="<%= data.id %>">
+							<input class="single-recipe-dayid" type="hidden" name="dayid" value="">
+							<input class="single-recipe-add button add-recipe" type="submit" value="Legg til i planlegger">
+						</form>
+					</div>
+			</aside>
+			<aside class="recipe-footer">
+				<a id="back-to-search-link" href="/searchTabs"><label id="back-to-search-btn" for="">Tilbake til søk</label></a>
+			</aside>
+		</main>
+
+
+s
+		<%}%>

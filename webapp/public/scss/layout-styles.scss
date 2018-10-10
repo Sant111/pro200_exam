@@ -1,0 +1,51 @@
+.navbar {
+    background-color: #f1f1f1;
+    margin-bottom: 2vh;
+}
+
+.navbar-brand {
+    padding: 0;
+    padding-bottom: 0.5rem;
+}
+
+#navbar-fix	{
+	margin-bottom: 0;
+}
+
+.icons {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+}
+
+#logo-header {
+    width: 15rem;
+}
+
+
+#header-login-btn {
+    display: flex;
+    height: 35px;
+    background-color: rgb(255, 165, 20);
+    color: white; 
+    margin: auto auto auto 25%;
+    
+
+}
+
+#header-login-btn:hover {
+    background-color: rgb(243, 157, 18);   
+}
+.form-group {
+    margin: auto;
+    display: inline-block;
+
+}
+
+#user-info {
+    margin: auto;
+	display: inline-block;
+}
+
+#user-info * {
+	display: inline-block;
+}

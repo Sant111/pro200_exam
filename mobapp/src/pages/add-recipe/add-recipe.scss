@@ -1,0 +1,27 @@
+page-add-recipe {
+
+    div{
+        width: 100%;
+        margin: auto;
+    }
+    .btnAdd{
+        background-color: #FFA51E;
+        width: 48%;
+    }
+    .btnCancel{
+        background-color: #FFA51E;
+        width: 48%;
+    }
+
+    ion-title{
+        color: rgb(238, 237, 237);
+    }
+    
+    .contentBack{
+        background-color: #F0F0EC;
+    }
+    
+    ion-label{
+        font-size: 14px;
+    }
+}

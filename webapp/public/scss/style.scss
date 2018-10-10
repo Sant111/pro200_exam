@@ -1,0 +1,276 @@
+@media (max-width: 600px) {}
+
+@media (min-width: 768px) and (max-width: 1024px) {}
+
+html {
+    overflow-y: scroll;
+}
+
+#wrapper {
+    position: relative;
+}
+
+#background-week {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 38%;
+    background-image: url('../images/weekplanner.jpg');
+    background-repeat: no-repeat;
+    background-attachment: cover;
+    background-size: 100%;
+    opacity: 0.4;
+    filter: blur(10px);
+    z-index: -1000;
+}
+
+#title-wrapper {
+    border-radius: 3px;
+    padding: 5px;
+    position: relative;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: -8%;
+}
+
+.breakfast-wrapper {
+    position: relative;
+    display: grid;
+    grid-gap: 5px;
+    height: 28vh;
+    justify-content: center;
+    text-align: center;
+    grid-template-columns: repeat(7, minmax(12vmax, 0));
+}
+
+.lunch-wrapper {
+    display: grid;
+    position: relative;
+    grid-gap: 5px;
+    height: 28vh;
+    justify-content: center;
+    text-align: center;
+    grid-template-columns: repeat(7, minmax(12vmax, 0));
+}
+
+.dinner-wrapper {
+    display: grid;
+    position: relative;
+    grid-gap: 5px;
+    height: 28vh;
+    justify-content: center;
+    text-align: center;
+    grid-template-columns: repeat(7, minmax(12vmax, 0));
+}
+
+.breakfast {
+    border: 1.5px solid rgb(255, 165, 20);
+    border-radius: 3px;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 3px;
+}
+
+.lunch {
+    position: relative;
+    border: 1.5px solid rgb(255, 165, 20);
+    border-radius: 3px;
+    background-color: white;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 3px;
+}
+
+.dinner {
+    position: relative;
+    border: 1.5px solid rgb(255, 165, 20);
+    border-radius: 3px;
+    background-color: white;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 3px;
+}
+
+.btn-collapse {
+    display: grid;
+    background-color: #f19500;
+    border: none;
+    margin: auto;
+    height: 4.5%;
+    margin-top: 1vh;
+    border-radius: 3px;
+    position: relative;
+    width: 86vw;
+}
+
+.button-add {
+    text-align: center;
+    display: inline-block;
+    flex-wrap: wrap;
+    position: relative;
+    margin-bottom: 5vmax;
+    height: 3vmax;
+    width: 3vmax;
+    border-radius: 50%;
+    top: 30px;
+    background-color: rgb(255, 165, 20);
+    font-size: 1.5vmax;
+    color: white;
+    border-style: none;
+    cursor: pointer;
+}
+
+.button-add:hover {
+    background-color: rgb(233, 152, 21);
+}
+
+
+.complete-btn {
+    position: relative;
+    background-color: rgb(255, 165, 20);
+    border-style: none;
+    color: white;
+    font-size: 1.5rem;
+    width: 170px;
+    height: 70px;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    border-radius: 3px;
+    margin-left: -85px;
+    left: 50%;
+    cursor: pointer;
+}
+
+/* .meals {
+    margin-top: -15px;
+} */
+
+.recipe-main-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: -1px;
+}
+
+.recipe-planner-meal-image{
+    height: 100px;
+}
+.recipe-planner-meal-title {
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.recipe-title {
+    font-size: 1rem;
+}
+
+
+.product-main-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: -3px;
+    margin-top: -3px;
+}
+
+.planner-product-image {
+    max-height: 100px;
+}
+
+.planner-product-title {
+    font-size: 1rem;
+    
+}
+
+.grocery-amount {
+    font-size: 0.8rem;
+}
+
+.modal-planner-product-price {
+    font-size: 10px;
+    margin-top: -12px;
+    float: right;
+	font-weight: bold;
+	background-color: rgb(240, 240, 240);
+}
+
+.fa-times-circle {
+    content: "\f057";
+    color: red;
+    top: -40px;
+    left: 50px;
+    position: relative;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.has-content {
+    
+    position: absolute;
+    height: 2.5vmax;
+    width: 2.5vmax;
+    top: 145px;
+    right: -5px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 0;
+    
+}
+
+.see-more-btn-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    
+}
+
+
+.see-more-icon {
+    font-size: 2rem;
+    padding-bottom: 10px;
+    margin-top: -15px;
+    position: relative;
+    color: rgb(255, 165, 20);
+    animation-name: pulsating-see-more-btn;
+    animation-duration: 1.5s;
+    animation-timing-function: ease;
+    animation-iteration-count: 4;
+    cursor: pointer;
+    
+
+}
+
+@keyframes pulsating-see-more-btn {
+    0% {
+      color:  rgb(255, 165, 20);;
+    }
+    50% {
+        color: gray;
+    }
+    100% {
+        color:  rgb(255, 165, 20);
+    }
+  }
+
+.see-more-text {
+    font-size: 0.7rem;
+    margin-bottom: 0;
+}
+
+.see-more-icon:hover {
+    color: rgb(233, 152, 21);
+}
+
+.planner-product.price {
+    font-size: 10px;
+    margin-top: -12px;
+	font-weight: bold;
+	background-color: rgb(240, 240, 240);
+}

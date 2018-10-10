@@ -1,0 +1,44 @@
+page-welcome {
+
+    ion-title{
+        font-family: "GT Walsheim Medium", sans-serif;
+        color: rgb(238, 237, 237);
+    }
+    
+    .welcome{
+        background-color: #F0F0EC;
+    }
+    
+    .slide-image {
+        max-height: 50%;
+        max-width: 60%;
+        margin: 1px;
+    }
+
+    .img{
+        max-height: 50%;
+        max-width: 60%;
+        margin: 10px;
+        margin-bottom: 40px;
+    }
+
+    .welcomeButton{
+        color: white;
+        font-family: "GT Walsheim Regular", sans-serif;
+        background-color: #FFA51E;
+        position: absolute;
+        top: 83%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%); 
+    }
+
+    .skip{
+        margin-left: 250px;
+    }
+    h2{
+        margin-bottom: 9rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+}

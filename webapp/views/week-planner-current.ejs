@@ -1,0 +1,229 @@
+<% layout("layout") -%>
+
+
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="/">Hjem</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">
+				<a href="#">Planleggeren</a>
+			</li>
+		</ol>
+		</div>
+	</nav>
+
+	<div class="progressbar-container">
+		<ul class="steps">
+			<li class="active">Steg 1: Planlegge måltider for uken.</li>
+			<li>Steg 2: Handle andre husholdingsartikler</li>
+			<li>Steg 3: Oversikt</li>
+		</ul>
+	</div>
+
+	<body id="week-planner-body">
+		<div id="background-week">
+		</div>
+		<div id="title-wrapper">
+			<h1 id="title-text">Ukesplanlegger</h1>
+			<p id="title-two-text">Få full kontroll over ukesplanleggingen! Start med å trykke på et plusstegn.</p>
+		</div>
+
+		<div id="wrapper">
+
+			<!--Frokost-->
+			<p>
+				<button class="btn btn-primary btn-collapse" type="button" data-toggle="collapse" data-target="#breakfast-row" aria-expanded="true"
+				 aria-controls="breakfast-row">
+					Frokost
+				</button>
+
+			</p>
+			
+			<div class="collapse in show" id="breakfast-row">
+				<div class="breakfast-wrapper">
+					<div class="breakfast" id="breakfast-monday">
+						
+						<p>Mandag</p>						
+						<% let currentDay = week.BreakfastMonday; %>
+						<% include ../views/partials/plannerPartial.ejs %>
+					</div>
+					<div class="breakfast" id="breakfast-tuesday">
+						<p>Tirsdag</p>
+						<% currentDay = week.BreakfastTuesday;%>
+						<% include ../views/partials/plannerPartial.ejs %>
+						
+					</div>
+					<div class="breakfast" id="breakfast-wednesday">
+						<p>Onsdag</p>
+						
+						<% currentDay = week.BreakfastWednesday; %>
+						<% include ../views/partials/plannerPartial.ejs %>
+						
+					</div>
+					<div class="breakfast" id="breakfast-thursday">
+						<p>Torsdag</p>
+					
+						<%  currentDay = week.BreakfastThursday; %>
+						<% include ../views/partials/plannerPartial.ejs %>
+						
+					</div>
+					<div class="breakfast" id="breakfast-friday">
+						<p>Fredag</p>
+						
+						<%  currentDay = week.BreakfastFriday; %>
+						<% include ../views/partials/plannerPartial.ejs %>
+						
+					</div>
+					<div class="breakfast" id="breakfast-saturday">
+						<p>Lørdag</p>
+						
+						<%  currentDay = week.BreakfastSaturday; %>
+						<% include ../views/partials/plannerPartial.ejs %>
+						
+					</div>
+					<div class="breakfast" id="breakfast-sunday">
+						<p>Søndag</p>
+				
+						<%  currentDay = week.BreakfastSunday; %>
+						<% include ../views/partials/plannerPartial.ejs %>
+						
+					</div>
+				</div>
+			</div>
+
+			<!--Lunsj-->
+
+			<p>
+				<button class="btn btn-primary btn-collapse" type="button" data-toggle="collapse" data-target="#lunch-row" aria-expanded="true"
+				 aria-controls="lunch-row">
+					Lunsj
+				</button>
+			</p>
+			<div class="collapse in show" id="lunch-row">
+				<div class="lunch-wrapper">
+					<div class="lunch" id="lunch-monday">
+						<p>Mandag</p>
+					
+						<%  currentDay = week.LunchMonday; %>
+						<% include ../views/partials/plannerPartial.ejs %>
+						
+					</div>
+					<div class="lunch" id="lunch-tuesday">
+						<p>Tirsdag</p>
+					
+						<%  currentDay = week.LunchTuesday;  %>
+						<% include ../views/partials/plannerPartial.ejs %>
+						
+					</div>
+					<div class="lunch" id="lunch-wednesday">
+						<p>Onsdag</p>
+						
+						<%  currentDay = week.LunchWednesday;  %>
+						<% include ../views/partials/plannerPartial.ejs %>
+						
+					</div>
+					<div class="lunch" id="lunch-thursday">
+						<p>Torsdag</p>
+
+						
+						<%  currentDay = week.LunchThursday;  %>
+						<% include ../views/partials/plannerPartial.ejs %>
+						
+					</div>
+					<div class="lunch" id="lunch-friday">
+						<p>Fredag</p>
+					
+						<%  currentDay = week.LunchFriday; %>
+						<% include ../views/partials/plannerPartial.ejs %>
+						
+					</div>
+					<div class="lunch" id="lunch-saturday">
+						<p>Lørdag</p>
+						
+						<%  currentDay = week.LunchSaturday; %>
+						<% include ../views/partials/plannerPartial.ejs %>
+						
+					</div>
+					<div class="lunch" id="lunch-sunday">
+						<p>Søndag</p>
+					
+						<%  currentDay = week.LunchSunday; %>
+						<% include ../views/partials/plannerPartial.ejs %>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Dinner-->
+		<p>
+			<button class="btn btn-primary btn-collapse" type="button" data-toggle="collapse" data-target="#dinner-row" aria-expanded="true"
+			 aria-controls="dinner-row">
+				Middag
+			</button>
+		</p>
+		<div class="collapse in show" id="dinner-row">
+			<div class="dinner-wrapper">
+				<div class="dinner" id="dinner-monday">
+					<p>Mandag</p>
+					
+					<%  currentDay = week.DinnerMonday; %>
+					<% include ../views/partials/plannerPartial.ejs %>
+					
+				</div>
+				<div class="dinner" id="dinner-tuesday">
+					<p>Tirsdag</p>
+					
+					<%  currentDay = week.DinnerTuesday; %>
+					<% include ../views/partials/plannerPartial.ejs %>
+					
+				</div>
+				<div class="dinner" id="dinner-wednesday">
+					<p>Onsdag</p>
+					
+					<%  currentDay = week.DinnerWednesday; %>
+					<% include ../views/partials/plannerPartial.ejs %>
+					
+				</div>
+				<div class="dinner" id="dinner-thursday">
+					<p>Torsdag</p>
+					<%  currentDay = week.DinnerThursday; %>
+					<% include ../views/partials/plannerPartial.ejs %>
+					
+				</div>
+				<div class="dinner" id="dinner-friday">
+					<p>Fredag</p>
+					
+					<%  currentDay = week.DinnerFriday; %>
+					<% include ../views/partials/plannerPartial.ejs %>
+					
+				</div>
+				<div class="dinner" id="dinner-saturday">
+					<p>Lørdag</p>
+					
+					<%  currentDay = week.DinnerSaturday; %>
+					<% include ../views/partials/plannerPartial.ejs %>
+					
+				</div>
+				<div class="dinner" id="dinner-sunday">
+					<p>Søndag</p>
+										
+					<%  currentDay = week.DinnerSunday; %>
+					<% include ../views/partials/plannerPartial.ejs %>
+					
+				</div>
+
+			</div>
+
+		</div>
+		</div>
+		</div>
+		</div>
+		<a href="/search">
+			<input class="btn btn-primary complete-btn" type="submit" value="Gå videre">
+		</a>
+		</div>
+
+	</body>
+	

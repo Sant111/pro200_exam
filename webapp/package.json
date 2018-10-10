@@ -1,0 +1,49 @@
+{
+  "name": "kolonial",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "test": "mocha || true",
+    "start-supervisor": "supervisor ./bin/www",
+    "start-sass": "node ./tasks/sass.js",
+    "start-watch": "node-sass ./public/scss/main.scss  ./public/stylesheets/styles.min.css -wo",
+    "start": "concurrently --kill-others \"npm run start-watch\"  \"npm run start-supervisor\""
+  },
+  "dependencies": {
+    "beautify": "0.0.8",
+    "body-parser": "~1.18.2",
+    "boostrap": "^2.0.0",
+    "bootstrap": "^4.1.1",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "ejs-locals": "^1.0.2",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "express-validation": "^1.0.2",
+    "jquery": "^3.2.1",
+    "mocha": "^5.2.0",
+    "morgan": "~1.9.0",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.3",
+    "node-sass": "^4.9.0",
+    "popper.js": "^1.12.9",
+    "promise": "^8.0.1",
+    "q": "^1.5.1",
+    "request": "^2.87.0",
+    "sequelize": "^4.37.7",
+    "sequelize-cli": "^4.0.0",
+    "serve-favicon": "~2.4.5",
+    "sqlite3": "^4.0.0",
+    "supertest": "^3.1.0",
+    "utf8": "^3.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "modernizr": "^3.6.0",
+    "normalize": "^0.3.1",
+    "reload": "^2.2.2"
+  }
+}

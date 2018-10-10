@@ -1,0 +1,19 @@
+# Secret configfil
+config.js
+config/config.json 
+
+# Node modules
+node_modules/
+
+#minified stylesheets
+
+#intellij files
+.idea
+#we
+
+tmp/week-planner/*
+
+# Local log file
+npm-debug.log
+
+public/stylesheets/styles.min.css

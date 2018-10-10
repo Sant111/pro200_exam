@@ -1,0 +1,11 @@
+#build
+.vscode
+
+/www/build 
+./www/build
+
+#Environment file
+src/app/env.ts
+
+.sourcemaps/*
+.sourcemaps

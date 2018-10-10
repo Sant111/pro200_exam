@@ -1,0 +1,64 @@
+<% layout("layout") %>
+
+  <h1>KWERITEST</h1>
+
+	<div class="container container-fluid">
+		<div class="header">
+      </div>
+			<form id="search-form" class="" action="querytest" method="post">
+          <div>
+            <input type="text" id="field-search" name="formfield" placeholder="ProduktID" >
+            <input type="submit" value="Legg til">
+          </div>
+      </form>
+
+      
+      
+      <table>
+        <tr>
+
+            <%if (locals.returnData){%>
+              <td> <p> returnData = <%= returnData %></p> </td>
+            
+            <% } %>
+          
+        </tr>
+      
+          <% if (typeof allProducts == 'object' && allProducts !== 'undefined') {%>
+
+            <% for (var i = 0; i < allProducts.length; i++) { %>
+              
+              <tr>
+             
+                <td>
+                  <p> KolonialID: <%= allProducts[i].kolonialId %></p>
+                </td>
+
+                <td>
+                  <p> Opprettet: <%= allProducts[i].createdAt %></p>
+                </td>
+
+                <td>
+                  <p> Sist endret: <%= allProducts[i].updatedAt %></p>
+                </td>
+        
+              </tr>
+
+            <% } %>
+
+          <% } else { %> 
+
+            <%= console.log(locals.allProducts)%>
+
+            <p> Her var det ingen ting. </p>
+
+          <% } %> 
+
+      </table>
+  
+
+
+	
+
+  
+	</div>

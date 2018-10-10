@@ -1,0 +1,34 @@
+
+	<div class="meals">
+		<a class="see-more-icon fa fa-info-circle" data-toggle="modal" data-target="#ModalCenter" name="see-more"><p class="see-more-text">Trykk her for detaljer</p></a>
+
+		<% if(currentDay.Meals.length > 0) {%>
+				<h3 class="recipe-main-title">Oppskrifter (<%= currentDay.Meals.length  %>):</h3>
+
+				<% for(meal of currentDay.Meals) { %>
+				<div>
+                    <p class="recipe-planner-meal-title"><%= meal.Title %></p>
+                </div>
+				<% }%>
+			<% }%>
+				</div>
+			<% if(currentDay.Products.length > 0) {%>								
+				<div class="products">
+				<h3 class="product-main-title">Enkeltvarer</h3>
+                <h4 class="grocery-amount">Antall: <%= currentDay.Products.length  %></h4>
+				<% for(product of currentDay.Products) { %>
+
+                    
+				<% }%>
+
+
+
+				</div>
+				<div>
+			</div>
+
+
+				
+			<% }%>
+				
+

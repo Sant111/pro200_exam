@@ -1,0 +1,80 @@
+#tabs-container	{
+	padding: 0;
+	display:grid;
+	grid-template-areas:	"tabs"
+							"content";
+	grid-template-columns: 1fr;
+	grid-template-rows: 0 1fr;
+	min-height: 100vh;
+}
+
+#tabs-wrapper	{
+	grid-area: tabs;
+	z-index: 9999;
+	margin-top: 50px;
+}
+
+#search-location	{
+	grid-area: content;
+}
+
+.tab-content {
+    border-bottom: 0px;
+    position: relative;
+}
+
+.tab-content ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0)
+}
+
+.nav-item {
+    margin: 0 1rem;
+}
+
+.nav-tabs {
+    border-bottom: 0px;
+}
+
+.tab-content .nav-link {
+    background-color: rgb(255, 165, 20);
+}
+
+.nav-tabs .nav-link {
+    border: 1px solid rgb(255, 165, 20);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.nav-tabs>li>label {
+    padding-top: 8px;
+    border: 1px solid rgb(255, 165, 20);
+    color: #f1f1f1;
+    padding-bottom: 8px;
+    line-height: 20px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    -moz-border-radius-bottomright: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem 3rem;
+}
+
+.nav-tabs>.active>label,
+.nav-tabs>.active>label:hover,
+.nav-tabs>.active>label:focus {
+    color: rgb(255, 165, 20);
+    cursor: default;
+    background-color: rgb(255, 165, 20);
+    border: 1px solid rgb(255, 165, 20);
+    border-top-color: transparent;
+}
